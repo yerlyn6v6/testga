@@ -1,3 +1,4 @@
+<!-- 
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -31,3 +32,61 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <button id=button_push>push the button</button>
   </body>
 </html>
+ -->
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KLHSRNT3WB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-KLHSRNT3WB');
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TPGHFT87');</script>
+    <!-- End Google Tag Manager -->
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TPGHFT87"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <h1>hi!</h1>
+    <button id="button_push">push the button</button>
+
+    <script>
+        // 버튼 클릭 시 GA4 이벤트 전송 함수
+        function trackButtonClick() {
+            // GA4 이벤트 전송
+            gtag('event', 'button_push', {
+                'event_category': 'Button',
+                'event_label': 'Push the Button',
+                'value': 1
+            });
+            console.log('GA4 이벤트 전송 완료');
+        }
+
+        // 페이지 로드 시 버튼에 클릭 이벤트 리스너 추가
+        window.onload = function() {
+            var button = document.getElementById('button_push');
+            button.addEventListener('click', trackButtonClick);
+        };
+    </script>
+</body>
+</html>
+
